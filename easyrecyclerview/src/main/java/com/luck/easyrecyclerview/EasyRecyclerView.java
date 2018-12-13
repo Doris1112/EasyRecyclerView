@@ -15,7 +15,12 @@ import android.widget.FrameLayout;
 import com.luck.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.luck.easyrecyclerview.swipe.SwipeRefreshLayout;
 
+/**
+ * @author Doris
+ * @date 2018/12/13
+ **/
 public class EasyRecyclerView extends FrameLayout {
+
     public static final String TAG = "EasyRecyclerView";
     public static boolean DEBUG = false;
     protected RecyclerView mRecycler;
@@ -168,7 +173,7 @@ public class EasyRecyclerView extends FrameLayout {
      * Implement this method to customize the AbsListView
      */
     protected void initRecyclerView(View view) {
-        mRecycler = (RecyclerView) view.findViewById(android.R.id.list);
+        mRecycler = view.findViewById(android.R.id.list);
         setItemAnimator(null);
         if (mRecycler != null) {
             mRecycler.setHasFixedSize(true);
@@ -250,7 +255,9 @@ public class EasyRecyclerView extends FrameLayout {
             update();
         }
 
-        //自动更改Container的样式
+        /**
+         * 自动更改Container的样式
+         */
         private void update() {
             log("update");
             int count;
@@ -366,6 +373,14 @@ public class EasyRecyclerView extends FrameLayout {
         mPtrLayout.setEnabled(true);
         mPtrLayout.setOnRefreshListener(listener);
         this.mRefreshListener = listener;
+    }
+
+    /**
+     * set the swipe can or not refresh
+     * @param canRefresh can or not
+     */
+    public void canRefresh(boolean canRefresh){
+        mPtrLayout.setEnabled(canRefresh);
     }
 
     public void setRefreshing(final boolean isRefreshing) {
