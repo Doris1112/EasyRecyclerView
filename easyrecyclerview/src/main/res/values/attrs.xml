@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="superrecyclerview">
+    <declare-styleable name="EasyRecyclerView">
         <attr name="layout_empty" format="reference" />
         <attr name="layout_progress" format="reference" />
         <attr name="layout_error" format="reference" />
@@ -17,7 +17,6 @@
             <enum name="outsideInset" value="0x03000000" />
         </attr>
     </declare-styleable>
-
 
     <declare-styleable name="SwipeMenuLayout">
         <attr name="leftViewId" format="reference" />
